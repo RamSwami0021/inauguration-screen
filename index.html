@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>स्वागतम्</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./fire.css" />
+</head>
+
+<body>
+  <div class="pyro" id="fireworkContainer" style="display: none; position: relative; z-index:7;">
+    <div class="before"></div>
+    <div class="after"></div>
+</div>
+  <!-- <div>
+    <img src="assets/curtain1.jpeg" id="curtain1">
+    <img src="assets/curtain2.jpeg" id="curtain2">
+  </div> -->
+  <div id="wrapper">
+  <img id="logoImg" style="width: 500px; margin: 10px;" alt="" src="assets/logo.png" />
+  <img id="logoImgright" style="width: 500px; margin: 10px;" alt="" src="assets/logo.png" />
+  <img id="curtainImgLeft" src="assets/side.png" />
+  <img id="curtainImgRight" src="assets/side.png" />
+  <img id="coverImg" src="assets/ladies.png" />
+  <div id="videoWrap">
+    <video id="video">
+    </video>
+  </div>
+  <img id="ribbonImg" src="assets/ri.png" />
+  <div id="ribbonRight" class="ribbon"></div>
+  <div id="ribbonLeft" class="ribbon"></div>
+  <div id="mainText">
+    <h2 id="txt" class="txt1">Launching of MIF Marwadi Matrimony</h2>
+    <h2 id="txt" class="txt2" style="display: none; -webkit-text-stroke: 0.5px rgb(0, 0, 0);">MIF Marwadi Matrimony</h2>
+  </div>
+<p id="venueText">सर्वेभ्यः स्वागतं यत्र समाजः समृद्धिमान्।</p>
+
+  <audio id="audio">
+    <source src="assets/final.mp3" type="audio/mpeg">
+  </audio>
+  <img src="assets/final.png" alt="" class="circular-rotation" id="rotatingImage">
+  <h1 id="name" style="font-size: 40px;">स्वामी श्री बालमुकुंदाचार्य हाथोज धाम</h1>
+  <h3 id="post" style="font-size: 25px;">विधायक-हवामहल विधानसभा, राजस्थान सरकार</h3>
+  <a id="btn" href="https://bababatuni.in/"><img src="assets/btnimg.png" alt=""></a>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    function open_curtain() {
+      $("#curtainImgLeft").animate({width:20},1000);
+      $("#curtainImgRight").animate({width:20},1000);
+      $("#logoImg").animate({width: 200,left:'8%'}, 1000);
+      $("#logoImgright").animate({width: 200,left:'91%'}, 1000);
+      // $("#mainText").animate({top: '8%',}, 1000);
+      $(".txt1").fadeOut(1000);
+      $(".txt2").fadeIn(4000);
+      $("#rotatingImage").fadeIn(4000);
+      $(".by").fadeIn(4000);
+      $("#name").fadeIn(4000);
+      $("#post").fadeIn(4000);
+      $("#btn").fadeIn(4000);
+      var fireworkContainer = document.getElementById('fireworkContainer');
+    fireworkContainer.style.display = 'block';
+    cutFunc();
+    }
+    document.addEventListener('click', open_curtain);
+</script>
+<div class="firework-container" onclick="createFirework(event)"></div>
+</body>
+
+</html>
