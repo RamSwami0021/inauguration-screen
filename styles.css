@@ -202,5 +202,7 @@ h2 {
   animation: rotate 5s linear infinite;
 }
 #rotatingImage {
-  /* filter: drop-shadow(30px 10px 4px #dddada); */
+  /* background: linear-gradient(to bottom, transparent, black);s */
+  /* mask-image: linear-gradient(to top, transparent, black);s */
+  -webkit-mask-image: linear-gradient(to top, transparent, black);
 }
