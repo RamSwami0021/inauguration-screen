@@ -139,8 +139,15 @@ html {
 }
 .txt2 {
   position: fixed;
-  font-size: 55px !important;
-  top: 6%;
+  font-size: 45px !important;
+  top: 10%;
+  width: 100vw;
+  text-align: center;
+}
+.txt3 {
+  position: fixed;
+  font-size: 45px !important;
+  top: 3%;
   width: 100vw;
   text-align: center;
 }
@@ -202,7 +209,6 @@ h2 {
   animation: rotate 5s linear infinite;
 }
 #rotatingImage {
-  /* background: linear-gradient(to bottom, transparent, black);s */
-  /* mask-image: linear-gradient(to top, transparent, black);s */
-  -webkit-mask-image: linear-gradient(to top, transparent, black);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 100%); 
+  mask-image: linear-gradient(to top, transparent 0%, black 100%);
 }
