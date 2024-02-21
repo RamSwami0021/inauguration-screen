@@ -32,14 +32,5 @@ window.onload = function ()
       venueText.style.paddingBottom = "-15vh"
     }, 500);
     
-
-    if (video.paused){
-        setTimeout(function () {
-          video.play();
-        }, 4000);
-        setTimeout(function () {
-          videoWrap.style.height = "55vh";
-        }, 124000);
-    } 
   }
 };

@@ -118,8 +118,9 @@ html {
 
 
 .ribbon:hover, #ribbonImg:hover {
-  cursor: url("assets/scissors.png"), auto;
+  cursor: url("assets/scissors.png") 80 80, auto;
 }
+
 
 
 

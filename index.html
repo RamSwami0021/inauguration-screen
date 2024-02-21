@@ -44,15 +44,39 @@
   </div>
 <p id="venueText">सर्वेभ्यः स्वागतं यत्र समाजः समृद्धिमान्।</p>
 
-  <audio id="audio">
+  <audio id="audio" loop>
     <source src="assets/final.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="clap">
+    <source src="assets/clap.mp3" type="audio/mpeg">
   </audio>
   <img src="assets/final.png" alt="" class="circular-rotation" id="rotatingImage">
   <h1 id="name" style="font-size: 40px;">स्वामी श्री बालमुकुंदाचार्य हाथोज धाम</h1>
   <h3 id="post" style="font-size: 25px;">विधायक-हवामहल विधानसभा, राजस्थान सरकार</h3>
-  <a id="btn" href="https://marwadiinternationalfederation.com/"><img src="assets/btnimg.png" alt=""></a>
+  <a id="btn" href="https://marwadiinternationalfederation.com/"><img id="hand" src="assets/btnimg.png" alt=""></a>
   <script src="script.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    document.getElementById('btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        var audio = document.getElementById('clap');
+        audio.play();
+        setTimeout(function() {
+            window.location.href = "https://marwadiinternationalfederation.com/";
+        }, 3000);
+    });
+    </script>
+    <script>
+      var btn = document.getElementById('btn');
+
+      btn.addEventListener('mouseover', function() {
+          document.getElementById('hand').style.cursor = 'url("assets/hand.png"), auto';
+      });
+
+      btn.addEventListener('mouseout', function() {
+          document.getElementById('hand').style.cursor = 'auto';
+      });
+  </script>
   <script>
     function open_curtain() {
       $("#curtainImgLeft").animate({width:20},1000);
