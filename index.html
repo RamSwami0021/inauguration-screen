@@ -33,14 +33,14 @@
   <div id="ribbonRight" class="ribbon"></div>
   <div id="ribbonLeft" class="ribbon"></div>
   <div id="mainText">
-    <h2 id="txt" class="txt1">Launching of Let's Learn with Ajay Sir</h2>
-    <h2 id="txt" class="txt3" style="display: none; -webkit-text-stroke: 0.5px rgb(0, 0, 0);">जय श्री श्याम!</h2>
+    <h2 id="txt" class="txt1">Launching of Shrikriators</h2>
+    <!-- <h2 id="txt" class="txt3" style="display: none; -webkit-text-stroke: 0.5px rgb(0, 0, 0);">जय श्री श्याम!</h2> -->
     <!-- <div style="display: flex;">
       <img src="assets/heart.png" alt="" style="margin-right: 10px; width: 100px; height: 100px;">
       <img src="assets/heart.png" id="" style="width: 100px; height: 100px;" alt="">
     </div> -->
     
-    <h2 id="txt" class="txt2" style="display: none; -webkit-text-stroke: 0.5px rgb(0, 0, 0);">Let's Learn with Ajay Sir</h2>
+    <h2 id="txt" class="txt2" style="display: none; -webkit-text-stroke: 0.5px rgb(0, 0, 0);">Shrikriators</h2>
   </div>
 <p id="venueText">सर्वेभ्यः स्वागतं यत्र समाजः समृद्धिमान्।</p>
 
@@ -51,9 +51,9 @@
     <source src="assets/clap.mp3" type="audio/mpeg">
   </audio>
   <img src="assets/man.png" alt="" class="circular-rotation" id="rotatingImage">
-  <h1 id="name" style="font-size: 40px;">श्री ठाकुर जी की कृपा से</h1>
-  <h3 id="post" style="font-size: 25px;">Ajay Kumawat (Founder & CEO)</h3>
-  <a id="btn" href="https://letslearnwithajaysir.com/"><img id="hand" src="assets/btnimg.png" alt=""></a>
+  <!-- <h1 id="name" style="font-size: 40px;">श्री ठाकुर जी की कृपा से</h1> -->
+  <!-- <h3 id="post" style="font-size: 25px;">Ajay Kumawat (Founder & CEO)</h3> -->
+  <a id="btn" href="http://shrikriators.com"><img id="hand" src="assets/btnimg.png" alt=""></a>
   <script src="script.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
@@ -62,8 +62,8 @@
         var audio = document.getElementById('clap');
         audio.play();
         setTimeout(function() {
-            window.location.href = "https://letslearnwithajaysir.com/";
-        }, 3000);
+            window.location.href = "http://shrikriators.com/";
+        }, 100);
     });
     </script>
     <script>
@@ -96,9 +96,52 @@
     fireworkContainer.style.display = 'block';
     cutFunc();
     }
-    document.addEventListener('click', open_curtain);
 </script>
 <div class="firework-container" onclick="createFirework(event)"></div>
+
+<audio id="music1" src="music1.mp3"></audio>
+<audio id="music2" src="music2.mp3"></audio>
+
+
+<script>
+  (function(){
+    let clickCount = 0;
+    const music1 = document.getElementById('music1');
+    const music2 = document.getElementById('music2');
+
+    // Prevent other click handlers on first click by catching the document click early
+    document.addEventListener('click', function handler(evt){
+      clickCount++;
+      if (clickCount === 1) {
+        // first click: only play music1
+        if (music1) {
+          music1.play();
+        }
+        // stop propagation so original open_curtain isn't triggered yet
+        evt.stopImmediatePropagation();
+      } else if (clickCount === 2) {
+        // second click: switch music and then trigger original behavior (open curtain)
+        if (music1) {
+          try { music1.pause(); music1.currentTime = 0; } catch(e){}
+        }
+        if (music2) {
+          music2.play();
+        }
+        evt.stopImmediatePropagation();
+      } else if (clickCount === 3) {
+        if (music2) {
+          try { music2.pause(); music1.currentTime = 0; } catch(e){}
+        }
+        if (typeof open_curtain === 'function') {
+          open_curtain(evt);
+        }
+        // remove this handler - no longer needed
+        document.removeEventListener('click', handler, true);
+      }
+    }, true); // use capture so this runs before other handlers
+  })();
+</script>
+
 </body>
 
 </html>

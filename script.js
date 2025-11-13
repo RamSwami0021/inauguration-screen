@@ -1,3 +1,20 @@
+
+let clickCount = 0;
+const music1 = document.getElementById('music1');
+const music2 = document.getElementById('music2');
+
+document.addEventListener('click', () => {
+  clickCount++;
+  if (clickCount === 1) {
+    music1.play();
+  } else if (clickCount === 2) {
+    music1.pause();
+    music1.currentTime = 0;
+    music2.play();
+  }
+});
+
+
 window.onload = function () 
 {
   var videoWrap = document.getElementById("videoWrap");
