@@ -33,34 +33,34 @@
   <div id="ribbonRight" class="ribbon"></div>
   <div id="ribbonLeft" class="ribbon"></div>
   <div id="mainText">
-    <h2 id="txt" class="txt1">Launching of Shrikriators</h2>
+    <!-- <h2 id="txt" class="txt1">Launching of Shrikriators</h2> -->
     <!-- <h2 id="txt" class="txt3" style="display: none; -webkit-text-stroke: 0.5px rgb(0, 0, 0);">जय श्री श्याम!</h2> -->
     <!-- <div style="display: flex;">
       <img src="assets/heart.png" alt="" style="margin-right: 10px; width: 100px; height: 100px;">
       <img src="assets/heart.png" id="" style="width: 100px; height: 100px;" alt="">
     </div> -->
     
-    <h2 id="txt" class="txt2" style="display: none; -webkit-text-stroke: 0.5px rgb(0, 0, 0);">Shrikriators</h2>
+    <!-- <h2 id="txt" class="txt2" style="display: none; -webkit-text-stroke: 0.5px rgb(0, 0, 0);">Shrikriators</h2> -->
   </div>
-<p id="venueText">सर्वेभ्यः स्वागतं यत्र समाजः समृद्धिमान्।</p>
+<!-- <p id="venueText">सर्वेभ्यः स्वागतं यत्र समाजः समृद्धिमान्।</p> -->
 
   <audio id="audio" loop>
-    <source src="assets/final.mp3" type="audio/mpeg">
+    <!-- <source src="assets/final.mp3" type="audio/mpeg"> -->
   </audio>
   <audio id="clap">
     <source src="assets/clap.mp3" type="audio/mpeg">
   </audio>
-  <img src="assets/man.png" alt="" class="circular-rotation" id="rotatingImage">
+  <!-- <img src="assets/man.png" alt="" class="circular-rotation" id="rotatingImage"> -->
   <!-- <h1 id="name" style="font-size: 40px;">श्री ठाकुर जी की कृपा से</h1> -->
   <!-- <h3 id="post" style="font-size: 25px;">Ajay Kumawat (Founder & CEO)</h3> -->
-  <a id="btn" href="http://shrikriators.com"><img id="hand" src="assets/btnimg.png" alt=""></a>
+  <!-- <a id="btn" href="http://shrikriators.com"><img id="hand" src="assets/btnimg.png" alt=""></a> -->
   <script src="script.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
     document.getElementById('btn').addEventListener('click', function(event) {
         event.preventDefault();
-        var audio = document.getElementById('clap');
-        audio.play();
+        // var audio = document.getElementById('clap');
+        // audio.play();
         setTimeout(function() {
             window.location.href = "http://shrikriators.com/";
         }, 100);
@@ -94,6 +94,9 @@
       $("#btn").fadeIn(4000);
       var fireworkContainer = document.getElementById('fireworkContainer');
     fireworkContainer.style.display = 'block';
+    setTimeout(function() {
+      window.location.href = "http://shrikriators.com";
+    }, 800);
     cutFunc();
     }
 </script>
